@@ -54,13 +54,13 @@ def execute_func(filename, sheetname):
         expected_msg = expected.get('msg')
         real_result = api_func(url=url, data=data)
         real_msg = real_result.get('msg')
-        print('Ԥ�ڽ��Ϊ��{}'.format(expected_msg))
-        print('ʵ�ʽ��Ϊ��{}'.format(real_msg))
+        print('预期结果为{}'.format(expected_msg))
+        print('实际结果为{}'.format(real_msg))
         if real_msg == expected_msg:
-            print('��{}������ͨ����'.format(case_id))
+            print('第{}条用例通过'.format(case_id))
             final_res = 'pass'
         else:
-            print('��{}������δͨ����'.format(case_id))
+            print('第{}条用例未通过'.format(case_id))
             final_res = 'fail'
         print('*' * 30)
         write_result(filename, sheetname, case_id + 1, 8, final_res)
